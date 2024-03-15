@@ -15,6 +15,5 @@ public class Beispiel {
         hallo2.add(86);
         data.add(hallo2);
         System.out.println(data);
-
     }
 }

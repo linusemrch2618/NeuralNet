@@ -1,11 +1,55 @@
 import java.util.*;
 
 class Network {
+
     List<List<Integer>> data = new ArrayList();
-    {
-        List<Integer> Toaster1 = new ArrayList();
-        Toaster1.add()
+    public List data(){
+        data.add(Toaster1);
+        data.add(Toaster2);
+        data.add(Toaster3);
+        data.add(Toaster4);
     }
+    
+    List<Integer> Toaster1 = new ArrayList();
+    public Toaster1() {
+        Toaster1.add();
+        Toaster1.add();
+        Toaster1.add();
+        Toaster1.add();
+        Toaster1.add();
+        Toaster1.add();
+    }
+
+    List<Integer> Toaster2 = new ArrayList();
+    public Toaster2() {
+        Toaster2.add();
+        Toaster2.add();
+        Toaster2.add();
+        Toaster2.add();
+        Toaster2.add();
+        Toaster2.add();
+    } 
+    
+    List<Integer> Toaster3 = new ArrayList();
+    public Toaster3(){
+        Toaster3.add();
+        Toaster3.add();
+        Toaster3.add();
+        Toaster3.add();
+        Toaster3.add();
+        Toaster3.add();
+    }
+        
+    List<Integer> Toaster4 = new ArrayList();
+    public Toaster4(){    
+        Toaster4.add();
+        Toaster4.add();
+        Toaster4.add();
+        Toaster4.add();
+        Toaster4.add();
+        Toaster4.add();
+    }
+    
     List<Neuron> neurons = Arrays.asList(
             new InputNeuron(), new InputNeuron(), new InputNeuron(), new InputNeuron(), new InputNeuron(), new InputNeuron(),   /* input nodes */
             new HL1Neuron(), new HL1Neuron(), new HL1Neuron(), new HL1Neuron(),                                                 /* hidden nodes */

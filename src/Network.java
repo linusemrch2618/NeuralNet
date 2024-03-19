@@ -2,54 +2,59 @@ import java.util.*;
 
 class Network {
 
-    List<double> answers = new ArrayList();
-    public List answers(){
-        answers.add(450);
-        answers.add(200);
-        answers.add(150);
-        answers.add(50);
-    }
+    List<Double> answers = new ArrayList<>();
     
     List<List<Integer>> data = new ArrayList();
-    public List data(){
+    
+    List<Integer> Toaster1 = new ArrayList<>();
+
+    List<Integer> Toaster2 = new ArrayList<>();
+    
+    List<Integer> Toaster3 = new ArrayList<>();
+        
+    List<Integer> Toaster4 = new ArrayList<>();
+    
+    List<Neuron> neurons = Arrays.asList(
+            new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(),
+            new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(),
+            new Neuron(), new Neuron(), new Neuron(), new Neuron(),
+            new Neuron(), new Neuron(), new Neuron(),
+            new Neuron(), new Neuron(),
+            new Neuron() /* output node */
+    );
+
+    public Network() {
+        answers.add(450.0);
+        answers.add(200.0);
+        answers.add(150.0);
+        answers.add(50.0);
+
         data.add(Toaster1);
         data.add(Toaster2);
         data.add(Toaster3);
         data.add(Toaster4);
-    }
-    
-    List<Integer> Toaster1 = new ArrayList();
-    public Toaster1() {
+
         Toaster1.add(4);
         Toaster1.add(7);
         Toaster1.add(600);
         Toaster1.add(5);
         Toaster1.add(5);
         Toaster1.add(2500);
-    }
 
-    List<Integer> Toaster2 = new ArrayList();
-    public Toaster2() {
         Toaster2.add(2);
         Toaster2.add(6);
         Toaster2.add(550);
         Toaster2.add(3);
         Toaster2.add(2);
         Toaster2.add(2000);
-    } 
-    
-    List<Integer> Toaster3 = new ArrayList();
-    public Toaster3(){
+
         Toaster3.add(2);
         Toaster3.add(5);
         Toaster3.add(550);
         Toaster3.add(2);
         Toaster3.add(2);
         Toaster3.add(2000);
-    }
-        
-    List<Integer> Toaster4 = new ArrayList();
-    public Toaster4(){    
+
         Toaster4.add(1);
         Toaster4.add(5);
         Toaster4.add(500);
@@ -57,118 +62,35 @@ class Network {
         Toaster4.add(1);
         Toaster4.add(1800);
     }
-    
-    List<Neuron> neurons = Arrays.asList(
-            new InputNeuron(), new InputNeuron(), new InputNeuron(), new InputNeuron(), new InputNeuron(), new InputNeuron(),   /* input nodes */
-            new HL1Neuron(), new HL1Neuron(), new HL1Neuron(), new HL1Neuron(),                                                 /* hidden nodes */
-            new HL2Neuron(), new HL2Neuron(), new HL2Neuron(),                                                                  /* hidden nodes */
-            new OutputNeuron()                                                                                                  /* output node */
-    );
 
     public Double predict(Integer input1, Integer input2, Integer input3, Integer input4, Integer input5, Integer input6){
-        return neurons.get(13).compute(
-            neurons.get(12).compute(
-                neurons.get(9).compute(
-                    neurons.get(5).compute(input6),
-                    neurons.get(4).compute(input5),
-                    neurons.get(3).compute(input4),
-                    neurons.get(2).compute(input3),
-                    neurons.get(1).compute(input2),
-                    neurons.get(0).compute(input1)
+        return neurons.get(20).compute(
+                neurons.get(19).compute(
+                        neurons.get(17).compute(
+                                neurons.get(14).compute(
+
+                                ),
+                                neurons.get(13).compute(
+
+                                )
+                        ),
+                        neurons.get(16).compute(
+                                neurons.get(13).compute(
+
+                                ),
+                                neurons.get(12).compute(
+
+                                )
+                        )
                 ),
-                neurons.get(8).compute(
-                    neurons.get(5).compute(input6),
-                    neurons.get(4).compute(input5),
-                    neurons.get(3).compute(input4),
-                    neurons.get(2).compute(input3),
-                    neurons.get(1).compute(input2),
-                    neurons.get(0).compute(input1)
-                ),
-                neurons.get(7).compute(
-                    neurons.get(5).compute(input6),
-                    neurons.get(4).compute(input5),
-                    neurons.get(3).compute(input4),
-                    neurons.get(2).compute(input3),
-                    neurons.get(1).compute(input2),
-                    neurons.get(0).compute(input1)
-                ),
-                neurons.get(6).compute(
-                    neurons.get(5).compute(input6),
-                    neurons.get(4).compute(input5),
-                    neurons.get(3).compute(input4),
-                    neurons.get(2).compute(input3),
-                    neurons.get(1).compute(input2),
-                    neurons.get(0).compute(input1)
-                ),
-            ),
-            neurons.get(11).compute(
-                neurons.get(9).compute(
-                    neurons.get(5).compute(input6),
-                    neurons.get(4).compute(input5),
-                    neurons.get(3).compute(input4),
-                    neurons.get(2).compute(input3),
-                    neurons.get(1).compute(input2),
-                    neurons.get(0).compute(input1)
-                ),
-                neurons.get(8).compute(
-                    neurons.get(5).compute(input6),
-                    neurons.get(4).compute(input5),
-                    neurons.get(3).compute(input4),
-                    neurons.get(2).compute(input3),
-                    neurons.get(1).compute(input2),
-                    neurons.get(0).compute(input1)
-                ),
-                neurons.get(7).compute(
-                    neurons.get(5).compute(input6),
-                    neurons.get(4).compute(input5),
-                    neurons.get(3).compute(input4),
-                    neurons.get(2).compute(input3),
-                    neurons.get(1).compute(input2),
-                    neurons.get(0).compute(input1)
-                ),
-                neurons.get(6).compute(
-                    neurons.get(5).compute(input6),
-                    neurons.get(4).compute(input5),
-                    neurons.get(3).compute(input4),
-                    neurons.get(2).compute(input3),
-                    neurons.get(1).compute(input2),
-                    neurons.get(0).compute(input1)
-                ),
-            ),
-            neurons.get(10).compute(
-                neurons.get(9).compute(
-                    neurons.get(5).compute(input6),
-                    neurons.get(4).compute(input5),
-                    neurons.get(3).compute(input4),
-                    neurons.get(2).compute(input3),
-                    neurons.get(1).compute(input2),
-                    neurons.get(0).compute(input1)
-                ),
-                neurons.get(8).compute(
-                    neurons.get(5).compute(input6),
-                    neurons.get(4).compute(input5),
-                    neurons.get(3).compute(input4),
-                    neurons.get(2).compute(input3),
-                    neurons.get(1).compute(input2),
-                    neurons.get(0).compute(input1)
-                ),
-                neurons.get(7).compute(
-                    neurons.get(5).compute(input6),
-                    neurons.get(4).compute(input5),
-                    neurons.get(3).compute(input4),
-                    neurons.get(2).compute(input3),
-                    neurons.get(1).compute(input2),
-                    neurons.get(0).compute(input1)
-                ),
-                neurons.get(6).compute(
-                    neurons.get(5).compute(input6),
-                    neurons.get(4).compute(input5),
-                    neurons.get(3).compute(input4),
-                    neurons.get(2).compute(input3),
-                    neurons.get(1).compute(input2),
-                    neurons.get(0).compute(input1)
+                neurons.get(18).compute(
+                        neurons.get(16).compute(
+
+                        ),
+                        neurons.get(15).compute(
+
+                        )
                 )
-            )
         );
     }
     public void train(List<List<Integer>> data, List<Double> answers){

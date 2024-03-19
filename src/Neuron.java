@@ -1,35 +1,45 @@
-import java.util.*;
+public class Neuron {
 
-class Neuron {
-    Random random = new Random();
-    private Double oldBias = random.nextDouble(-1, 1), bias = random.nextDouble(-1, 1);
-    public Double oldWeight1 = random.nextDouble(-1, 1), weight1 = random.nextDouble(-1, 1);
-    private Double oldWeight2 = random.nextDouble(-1, 1), weight2 = random.nextDouble(-1, 1);
+    // Static variables
+    static float minWeightValue;
+    static float maxWeightValue;
 
-    public double compute(double input1, double input2){
-        double preActivation = (this.weight1 * input1) + (this.weight2 * input2) + this.bias;
-        double output = Util.sigmoid(preActivation);
-        return output;
+    // Non-Static Variables
+    float[] weights;
+    float[] cache_weights;
+    float gradient;
+    float bias;
+    float value = 0;
+
+
+    // Constructor for the hidden / output neurons
+    public Neuron(float[] weights, float bias){
+        this.weights = weights;
+        this.bias = bias;
+        this.cache_weights = this.weights;
+        this.gradient = 0;
     }
-    public void mutate(){
-        int propertyToChange = random.nextInt(0, 3);
-        Double changeFactor = random.nextDouble(-1, 1);
-        if (propertyToChange == 0){
-            this.bias += changeFactor;
-        } else if (propertyToChange == 1){
-            this.weight1 += changeFactor;
-        } else {
-            this.weight2 += changeFactor;
-        };
+
+    // Constructor for the input neurons
+    public Neuron(float value){
+        this.weights = null;
+        this.bias = -1;
+        this.cache_weights = this.weights;
+        this.gradient = -1;
+        this.value = value;
     }
-    public void forget(){
-        bias = oldBias;
-        weight1 = oldWeight1;
-        weight2 = oldWeight2;
+
+    // Static function to set min and max weight for all variables
+    public static void setRangeWeight(float min,float max) {
+        minWeightValue = min;
+        maxWeightValue = max;
     }
-    public void remember(){
-        oldBias = bias;
-        oldWeight1 = weight1;
-        oldWeight2 = weight2;
+
+    // Function used at the end of the backprop to switch the calculated value in the
+    // cache weight in the weights
+    public void update_weight() {
+        this.weights = this.cache_weights;
     }
+
+
 }

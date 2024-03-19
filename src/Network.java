@@ -2,6 +2,14 @@ import java.util.*;
 
 class Network {
 
+    List<double> answers = new ArrayList();
+    public List answers(){
+        answers.add(450);
+        answers.add(200);
+        answers.add(150);
+        answers.add();
+    }
+    
     List<List<Integer>> data = new ArrayList();
     public List data(){
         data.add(Toaster1);
@@ -12,22 +20,22 @@ class Network {
     
     List<Integer> Toaster1 = new ArrayList();
     public Toaster1() {
-        Toaster1.add();
-        Toaster1.add();
-        Toaster1.add();
-        Toaster1.add();
-        Toaster1.add();
-        Toaster1.add();
+        Toaster1.add(4);
+        Toaster1.add(7);
+        Toaster1.add(600);
+        Toaster1.add(5);
+        Toaster1.add(5);
+        Toaster1.add(2500);
     }
 
     List<Integer> Toaster2 = new ArrayList();
     public Toaster2() {
-        Toaster2.add();
-        Toaster2.add();
-        Toaster2.add();
-        Toaster2.add();
-        Toaster2.add();
-        Toaster2.add();
+        Toaster2.add(2);
+        Toaster2.add(6);
+        Toaster2.add(550);
+        Toaster2.add(3);
+        Toaster2.add(2);
+        Toaster2.add(2000);
     } 
     
     List<Integer> Toaster3 = new ArrayList();

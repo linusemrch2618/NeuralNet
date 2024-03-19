@@ -13,6 +13,8 @@ class Network {
     List<Integer> Toaster3 = new ArrayList<>();
         
     List<Integer> Toaster4 = new ArrayList<>();
+
+    List<Integer> Toaster5 = new ArrayList<>();
     
     List<Neuron> neurons = Arrays.asList(
             new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(),
@@ -28,11 +30,13 @@ class Network {
         answers.add(200.0);
         answers.add(150.0);
         answers.add(50.0);
+        answers.add(145.0);
 
         data.add(Toaster1);
         data.add(Toaster2);
         data.add(Toaster3);
         data.add(Toaster4);
+        data.add(Toaster5);
 
         Toaster1.add(4);
         Toaster1.add(7);
@@ -61,6 +65,13 @@ class Network {
         Toaster4.add(1);
         Toaster4.add(1);
         Toaster4.add(1800);
+
+        Toaster5.add(6);
+        Toaster5.add(5);
+        Toaster5.add(550);
+        Toaster5.add(1);
+        Toaster5.add(1);
+        Toaster5.add(3240);
     }
 
     public Double predict(Integer input1, Integer input2, Integer input3, Integer input4, Integer input5, Integer input6){

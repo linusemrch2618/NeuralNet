@@ -17,12 +17,9 @@ class Network {
     List<Integer> Toaster5 = new ArrayList<>();
     
     List<Neuron> neurons = Arrays.asList(
-            new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(),
-            new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(),
-            new Neuron(), new Neuron(), new Neuron(), new Neuron(),
-            new Neuron(), new Neuron(), new Neuron(),
-            new Neuron(), new Neuron(),
-            new Neuron() /* output node */
+            new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), 
+            new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), new Neuron(), 
+            new Neuron(), 
     );
 
     public Network() {
@@ -75,33 +72,8 @@ class Network {
     }
 
     public Double predict(Integer input1, Integer input2, Integer input3, Integer input4, Integer input5, Integer input6){
-        return neurons.get(20).compute(
-                neurons.get(19).compute(
-                        neurons.get(17).compute(
-                                neurons.get(14).compute(
-
-                                ),
-                                neurons.get(13).compute(
-
-                                )
-                        ),
-                        neurons.get(16).compute(
-                                neurons.get(13).compute(
-
-                                ),
-                                neurons.get(12).compute(
-
-                                )
-                        )
-                ),
-                neurons.get(18).compute(
-                        neurons.get(16).compute(
-
-                        ),
-                        neurons.get(15).compute(
-
-                        )
-                )
+        return neurons.get(24).compute(
+                neurons.get(23).comput
         );
     }
     public void train(List<List<Integer>> data, List<Double> answers){

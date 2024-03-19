@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Neuron {
+class InputNeuron {
     Random random = new Random();
     private Double oldBias = random.nextDouble(-1, 1), bias = random.nextDouble(-1, 1);
     private Double oldWeight1 = random.nextDouble(-1, 1), weight1 = random.nextDouble(-1, 1);

@@ -1,14 +1,16 @@
 import java.util.*;
 
-class Neuron {
+class HL1Neuron extends Neuron {
     Random random = new Random();
-    private Double oldBias = random.nextDouble(-1, 1), bias = random.nextDouble(-1, 1);
-    private Double oldWeight1 = random.nextDouble(-1, 1), weight1 = random.nextDouble(-1, 1);
     private Double oldWeight2 = random.nextDouble(-1, 1), weight2 = random.nextDouble(-1, 1);
-    private Double oldWeight3 = random.nextDouble(-1, 1), weight2 = random.nextDouble(-1, 1);
-    private Double oldWeight4 = random.nextDouble(-1, 1), weight2 = random.nextDouble(-1, 1);
-    private Double oldWeight5 = random.nextDouble(-1, 1), weight2 = random.nextDouble(-1, 1);
-    private Double oldWeight6 = random.nextDouble(-1, 1), weight2 = random.nextDouble(-1, 1);
+    private Double oldWeight3 = random.nextDouble(-1, 1), weight3 = random.nextDouble(-1, 1);
+    private Double oldWeight4 = random.nextDouble(-1, 1), weight4 = random.nextDouble(-1, 1);
+    private Double oldWeight5 = random.nextDouble(-1, 1), weight5 = random.nextDouble(-1, 1);
+    private Double oldWeight6 = random.nextDouble(-1, 1), weight6 = random.nextDouble(-1, 1);
+
+    public HL1Neuron() {
+       super();
+    }
 
     public double compute(double input1, double input2){
         double preActivation =  (this.weight1 * input1) + 

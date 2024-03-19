@@ -7,7 +7,7 @@ class Network {
         answers.add(450);
         answers.add(200);
         answers.add(150);
-        answers.add();
+        answers.add(50);
     }
     
     List<List<Integer>> data = new ArrayList();
@@ -40,22 +40,22 @@ class Network {
     
     List<Integer> Toaster3 = new ArrayList();
     public Toaster3(){
-        Toaster3.add();
-        Toaster3.add();
-        Toaster3.add();
-        Toaster3.add();
-        Toaster3.add();
-        Toaster3.add();
+        Toaster3.add(2);
+        Toaster3.add(5);
+        Toaster3.add(550);
+        Toaster3.add(2);
+        Toaster3.add(2);
+        Toaster3.add(2000);
     }
         
     List<Integer> Toaster4 = new ArrayList();
     public Toaster4(){    
-        Toaster4.add();
-        Toaster4.add();
-        Toaster4.add();
-        Toaster4.add();
-        Toaster4.add();
-        Toaster4.add();
+        Toaster4.add(1);
+        Toaster4.add(5);
+        Toaster4.add(500);
+        Toaster4.add(1);
+        Toaster4.add(1);
+        Toaster4.add(1800);
     }
     
     List<Neuron> neurons = Arrays.asList(

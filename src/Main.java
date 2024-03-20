@@ -26,16 +26,16 @@ public class Main {
     static Layer[]  CreateLayer() {
         Layer[] layers = new Layer[3];
         layers[0] = null; // Input Layer 0,2
-        layers[1] = new Layer(2,4); // Hidden Layer 2,6
+        layers[1] = new Layer(3,4); // Hidden Layer 2,6
         layers[2] = new Layer(4,1); // Hidden Layer 2,6
 
         return layers;
     }
     static TrainingData[] CreateTrainingData() {
-        float[] input1 = new float[] {0, 0}; //Expect 0 here
-        float[] input2 = new float[] {0, 1}; //Expect 1 here
-        float[] input3 = new float[] {1, 0}; //Expect 1 here
-        float[] input4 = new float[] {1, 1}; //Expect 0 here
+        float[] input1 = new float[] {0, 0, 1}; //Expect 0 here
+        float[] input2 = new float[] {0, 1, 0}; //Expect 1 here
+        float[] input3 = new float[] {1, 0, 1}; //Expect 1 here
+        float[] input4 = new float[] {1, 1, 0}; //Expect 0 here
 
         float[] expectedOutput1 = new float[] {0};
         float[] expectedOutput2 = new float[] {1};

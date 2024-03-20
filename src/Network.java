@@ -1,71 +1,14 @@
 
 public class Network {
+    private final Layer[] layers;
+    private final TrainingData[] tDataSet;
 
-    // Variable Declaration
-
-    // Layers
-    static Layer[] layers; // My changes
-
-    // Training data
-    static TrainingData[] tDataSet; // My changes
-
-    // Main Method
-    public static void main(String[] args) {
-        // My changes
-        // Set the Min and Max weight value for all Neurons
-        Neuron.setRangeWeight(-1,1);
-
-        // Create the layers
-        // Notes: One thing you didn't code right is that neurons in a layer
-        // need to have number of weights corresponding to the previous layer
-        // which means that the first hidden layer need to have 2 weights per neuron and 6 neurons
-        layers = new Layer[3];
-        layers[0] = null; // Input Layer 0,2
-        layers[1] = new Layer(2,6); // Hidden Layer 2,6
-        layers[2] = new Layer(6,1); // Output Layer 6,1
-
-        // Create the training data
-        CreateTrainingData();
-
-        System.out.println("============");
-        System.out.println("Output before training");
-        System.out.println("============");
-        for(int i = 0; i < tDataSet.length; i++) {
-            forward(tDataSet[i].data);
-            System.out.println(layers[2].neurons[0].value);
-        }
-
-        train(1000000, 0.05f);
-
-        System.out.println("============");
-        System.out.println("Output after training");
-        System.out.println("============");
-        for(int i = 0; i < tDataSet.length; i++) {
-            forward(tDataSet[i].data);
-            System.out.println(layers[2].neurons[0].value);
-        }
+    public Network(Layer[] layers, TrainingData[] tDataSet) {
+        this.layers = layers;
+        this.tDataSet = tDataSet;
     }
 
-    public static void CreateTrainingData() {
-        float[] input1 = new float[] {0, 0}; //Expect 0 here
-        float[] input2 = new float[] {0, 1}; //Expect 1 here
-        float[] input3 = new float[] {1, 0}; //Expect 1 here
-        float[] input4 = new float[] {1, 1}; //Expect 0 here
-
-        float[] expectedOutput1 = new float[] {0};
-        float[] expectedOutput2 = new float[] {1};
-        float[] expectedOutput3 = new float[] {1};
-        float[] expectedOutput4 = new float[] {0};
-
-        // My changes (using an array for the data sets)
-        tDataSet = new TrainingData[4];
-        tDataSet[0] = new TrainingData(input1, expectedOutput1);
-        tDataSet[1] = new TrainingData(input2, expectedOutput2);
-        tDataSet[2] = new TrainingData(input3, expectedOutput3);
-        tDataSet[3] = new TrainingData(input4, expectedOutput4);
-    }
-
-    public static void forward(float[] inputs) {
+    public void forward(float[] inputs) {
         // First bring the inputs into the input layer layers[0]
         layers[0] = new Layer(inputs);
 
@@ -86,7 +29,7 @@ public class Network {
     // When ALL the neurons new weight have been calculated we refresh the neurons.
     // Meaning we do the following:
     // Calculate the output layer weights, calculate the hidden layer weight then update all the weights
-    public static void backward(float learning_rate,TrainingData tData) {
+    public void backward(float learning_rate,TrainingData tData) {
 
         int number_layers = layers.length;
         int out_index = number_layers-1;
@@ -134,7 +77,7 @@ public class Network {
     }
 
     // This function sums up all the gradient connecting a given neuron in a given layer
-    public static float sumGradient(int n_index,int l_index) {
+    public float sumGradient(int n_index,int l_index) {
         float gradient_sum = 0;
         Layer current_layer = layers[l_index];
         for(int i = 0; i < current_layer.neurons.length; i++) {
@@ -146,12 +89,21 @@ public class Network {
 
 
     // This function is used to train being forward and backward.
-    public static void train(int training_iterations,float learning_rate) {
+    public void train(int training_iterations,float learning_rate) {
         for(int i = 0; i < training_iterations; i++) {
             for(int j = 0; j < tDataSet.length; j++) {
                 forward(tDataSet[j].data);
                 backward(learning_rate,tDataSet[j]);
             }
         }
+    }
+
+
+    public Layer[] getLayers() {
+        return layers;
+    }
+
+    public TrainingData[] getTDataSet() {
+        return tDataSet;
     }
 }

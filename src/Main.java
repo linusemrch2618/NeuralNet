@@ -24,10 +24,10 @@ public class Main {
     }
 
     static Layer[]  CreateLayer() {
-        Layer[] layers = new Layer[4];
+        Layer[] layers = new Layer[3];
         layers[0] = null; // Input Layer 0,2
-        layers[1] = new Layer(6,6); // Hidden Layer 2,6
-        layers[2] = new Layer(6,1); // Output Layer 6,1
+        layers[1] = new Layer(6,12); // Hidden Layer 2,6
+        layers[2] = new Layer(12,1); // Output Layer 6,1
 
         return layers;
     }

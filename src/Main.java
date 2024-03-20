@@ -12,7 +12,7 @@ public class Main {
             System.out.println(net.getLayers()[2].neurons[0].value);
         }
 
-        net.train(1000000, 0.05f);
+        net.train(1000000, 0.1f);
 
         System.out.println("============");
         System.out.println("Output after training");
@@ -21,28 +21,30 @@ public class Main {
             net.forward(net.getTDataSet()[i].data);
             System.out.println(net.getLayers()[2].neurons[0].value);
         }
+        net.forward(new float[] {0.9F, 0.8F, 0.700F, 0.6F, 0.6F, 0.3500F});
+        System.out.println(net.getLayers()[2].neurons[0].value);
     }
 
     static Layer[]  CreateLayer() {
         Layer[] layers = new Layer[3];
         layers[0] = null; // Input Layer 0,2
-        layers[1] = new Layer(6,12); // Hidden Layer 2,6
-        layers[2] = new Layer(12,1); // Output Layer 6,1
+        layers[1] = new Layer(6,4); // Hidden Layer 2,6
+        layers[2] = new Layer(4,1); // Output Layer 6,1
 
         return layers;
     }
     static TrainingData[] CreateTrainingData() {
-        float[] input1 = new float[] {4, 7, 600, 5, 5, 2500}; //Expect 0 here
-        float[] input2 = new float[] {2, 6, 550, 3, 2, 2000}; //Expect 1 here
-        float[] input3 = new float[] {2, 5, 550, 2, 2, 2000}; //Expect 1 here
-        float[] input4 = new float[] {1, 5, 500, 1, 1, 1800}; //Expect 0 here
-        float[] input5 = new float[] {6, 5, 550, 1, 1, 3240}; //Expect 0 here
+        float[] input1 = new float[] {0.4F, 0.7F, 0.600F, 0.5F, 0.5F, 0.2500F}; //Expect 0 here
+        float[] input2 = new float[] {0.2F, 0.6F, 0.550F, 0.3F, 0.2F, 0.2000F}; //Expect 1 here
+        float[] input3 = new float[] {0.2F, 0.5F, 0.550F, 0.2F, 0.2F, 0.2000F}; //Expect 1 here
+        float[] input4 = new float[] {0.1F, 0.5F, 0.500F, 0.1F, 0.1F, 0.1800F}; //Expect 0 here
+        float[] input5 = new float[] {0.6F, 0.5F, 0.550F, 0.1F, 0.1F, 0.3240F}; //Expect 0 here
 
-        float[] expectedOutput1 = new float[] {450};
-        float[] expectedOutput2 = new float[] {200};
-        float[] expectedOutput3 = new float[] {150};
-        float[] expectedOutput4 = new float[] {50};
-        float[] expectedOutput5 = new float[] {145};
+        float[] expectedOutput1 = new float[] {0.450F};
+        float[] expectedOutput2 = new float[] {0.200F};
+        float[] expectedOutput3 = new float[] {0.150F};
+        float[] expectedOutput4 = new float[] {0.050F};
+        float[] expectedOutput5 = new float[] {0.145F};
 
         TrainingData[] tDataSet = new TrainingData[5];
         tDataSet[0] = new TrainingData(input1, expectedOutput1);

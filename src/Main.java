@@ -28,8 +28,8 @@ public class Main {
     static Layer[]  CreateLayer() {
         Layer[] layers = new Layer[3];
         layers[0] = null; // Input Layer 0,2
-        layers[1] = new Layer(6,4); // Hidden Layer 2,6
-        layers[2] = new Layer(4,1); // Output Layer 6,1
+        layers[1] = new Layer(6,4); // Hidden Layer 6, 4
+        layers[2] = new Layer(4,1); // Output Layer 4, 1
 
         return layers;
     }
